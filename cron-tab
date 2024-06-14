@@ -1,0 +1,33 @@
+
+          The crontab is a list of commands that you want to run on a regular schedule, and also the name of the command used to manage that list. 
+          Crontab stands for “cron table, ” because it uses the job scheduler cron to execute tasks; cron itself is named after “chronos, ” the 
+          Greek word for time. cron is the system process which will automatically perform tasks for you according to a set schedule. 
+          The schedule is called the crontab, which is also the name of the program used to edit that schedule. 
+
+         The Linux Crontab Format is represented by the following syntax:
+                 MIN HOUR DOM MON DOW CMD
+                  min   =  It ranges from 0 to 59 .
+                  hour  =  It spans from 0 to 23.
+                  dom   =  It ranges from 1 to 31.
+                  mon   =  It varies from 1 to 12.
+                  dow   =  It is represented by numbers from 0 to 6, where both 0 and 6 correspond to Sunday.
+
+
+      To schedule a job for every minute using Cron.
+              * * * * * CMD
+
+      To schedule a job for more than one time (e.g. Twice a Day)
+              00 11, 16 * * * /home/maverick/bin/incremental-backup
+                00 – 0th Minute (Top of the hour) 11, 16 – 11 AM and 4 PM * – Every day * – Every month * – Every day of the week
+
+      To schedule a job for certain range of time (e.g. Only on Weekdays)
+              00 09-18 * * * /home/maverick/bin/check-db-status
+                  00 – 0th Minute (Top of the hour) 09-18 – 9 am, 10 am, 11 am, 12 am, 1 pm, 2 pm, 3 pm, 4 pm, 5 pm, 6 pm * – 
+                     Every day * – Every month * – Every day of the week
+                  Cron Job every weekday during working hours : This example checks the status of the database every weekday 
+                    (i.e excluding Sat and Sun) during the working hours 9 a.m – 6 p.m.
+
+
+            
+            
+      
